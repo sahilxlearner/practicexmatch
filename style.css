@@ -1,0 +1,1045 @@
+/* ========================================
+   CDS MATCH
+   FULLY RESPONSIVE DARK THEME
+======================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background: #080d18;
+    color: #f8fafc;
+
+    overflow-x: hidden;
+}
+
+
+/* ========================================
+   VARIABLES
+======================================== */
+
+:root {
+    --bg: #080d18;
+    --header: #0b1220;
+
+    --card: #111827;
+    --card-light: #172033;
+
+    --border: #263449;
+    --border-light: #334155;
+
+    --text: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --muted: #94a3b8;
+
+    --blue: #3b82f6;
+    --blue-hover: #2563eb;
+
+    --green: #22c55e;
+    --green-bg: rgba(34, 197, 94, 0.12);
+
+    --red: #ef4444;
+    --red-bg: rgba(239, 68, 68, 0.12);
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+header {
+    width: 100%;
+
+    background: var(--header);
+
+    border-bottom: 1px solid var(--border);
+
+    text-align: center;
+
+    padding: 24px 20px 26px;
+}
+
+header h1 {
+    color: #ffffff;
+
+    font-size: clamp(23px, 3vw, 29px);
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+header p {
+    margin-top: 5px;
+
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+
+/* ========================================
+   MAIN CONTAINER
+======================================== */
+
+main {
+    width: 100%;
+
+    max-width: 1000px;
+
+    margin: 40px auto;
+
+    padding: 0 20px;
+}
+
+
+/* ========================================
+   QUESTION BOX
+======================================== */
+
+.question-box {
+    width: 100%;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    padding: 30px 32px 32px;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.25);
+
+    overflow: hidden;
+}
+
+
+/* ========================================
+   QUESTION HEADER
+======================================== */
+
+.question-header {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding-bottom: 17px;
+
+    border-bottom: 1px solid var(--border);
+
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+#question-number {
+    color: var(--text-secondary);
+
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+
+/* ========================================
+   TITLE
+======================================== */
+
+h2 {
+    text-align: center;
+
+    margin: 25px 0 30px;
+
+    color: #ffffff;
+
+    font-size: clamp(20px, 3vw, 23px);
+
+    font-weight: 700;
+
+    line-height: 1.3;
+}
+
+
+/* ========================================
+   MATCHING AREA
+======================================== */
+
+.matching-area {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+    gap: 24px;
+}
+
+.matching-area > div {
+    min-width: 0;
+}
+
+
+/* ========================================
+   COLUMN HEADINGS
+======================================== */
+
+h3 {
+    margin-bottom: 11px;
+
+    color: var(--text-secondary);
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.4px;
+}
+
+
+/* ========================================
+   MATCH ITEM
+======================================== */
+
+.match-item {
+    width: 100%;
+
+    min-width: 0;
+
+    min-height: 58px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 0;
+
+    padding: 12px;
+
+    margin-bottom: 9px;
+
+    background: var(--card-light);
+
+    border: 1px solid var(--border);
+
+    border-radius: 8px;
+
+    color: var(--text-secondary);
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    transition:
+        border-color 0.15s ease,
+        background 0.15s ease;
+}
+
+.match-item:hover {
+    border-color: var(--border-light);
+
+    background: #1b2639;
+}
+
+
+/* ========================================
+   COLUMN A LETTER
+======================================== */
+
+.match-item strong {
+    width: 25px;
+
+    min-width: 25px;
+
+    flex-shrink: 0;
+
+    color: #ffffff;
+
+    line-height: 1.5;
+}
+
+
+/* ========================================
+   COLUMN A TEXT
+======================================== */
+
+.term {
+    flex: 1;
+
+    min-width: 0;
+
+    color: #f1f5f9;
+
+    font-weight: 500;
+
+    /*
+       IMPORTANT:
+       Long questions wrap.
+    */
+    white-space: normal;
+
+    overflow-wrap: anywhere;
+
+    word-break: normal;
+
+    line-height: 1.5;
+}
+
+
+/* ========================================
+   COLUMN B NUMBER
+======================================== */
+
+.number {
+    width: 25px;
+
+    min-width: 25px;
+
+    flex-shrink: 0;
+
+    color: var(--text-secondary);
+
+    font-weight: 600;
+
+    line-height: 1.5;
+}
+
+
+/* ========================================
+   COLUMN B TEXT
+======================================== */
+
+.match-item > span:not(.term):not(.number) {
+    flex: 1;
+
+    min-width: 0;
+
+    color: #f1f5f9;
+
+    line-height: 1.5;
+
+    white-space: normal;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* ========================================
+   COMPACT DROPDOWN
+======================================== */
+
+.match-item select {
+    width: 38px;
+
+    min-width: 38px;
+
+    max-width: 38px;
+
+    height: 34px;
+
+    margin-left: 10px;
+
+    padding: 0;
+
+    flex-shrink: 0;
+
+    border: 1px solid var(--border-light);
+
+    border-radius: 6px;
+
+    background-color: #0d1524;
+
+    color: transparent;
+
+    font-size: 0;
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+    outline: none;
+
+    color-scheme: dark;
+
+    appearance: auto;
+
+    transition:
+        border-color 0.15s ease,
+        background-color 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+
+/* ========================================
+   DROPDOWN OPTIONS
+======================================== */
+
+.match-item select option {
+    background-color: #111827;
+
+    color: #f8fafc;
+
+    font-size: 13px;
+
+    padding: 8px;
+}
+
+
+/* ========================================
+   DROPDOWN HOVER
+======================================== */
+
+.match-item select:hover {
+    border-color: #64748b;
+
+    background-color: #172033;
+}
+
+
+/* ========================================
+   DROPDOWN FOCUS
+======================================== */
+
+.match-item select:focus {
+    border-color: var(--blue);
+
+    box-shadow:
+        0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+
+/* ========================================
+   CORRECT
+======================================== */
+
+.match-item select.correct {
+    border-color: var(--green);
+
+    background-color: var(--green-bg);
+
+    color: transparent;
+}
+
+
+/* ========================================
+   WRONG
+======================================== */
+
+.match-item select.wrong {
+    border-color: var(--red);
+
+    background-color: var(--red-bg);
+
+    color: transparent;
+}
+
+
+/* ========================================
+   LOCKED
+======================================== */
+
+.match-item select:disabled {
+    cursor: not-allowed;
+
+    opacity: 1;
+}
+
+
+/* ========================================
+   SUBMIT BUTTON
+======================================== */
+
+#submit-btn {
+    display: block;
+
+    width: fit-content;
+
+    min-width: 150px;
+
+    margin: 25px auto 0;
+
+    padding: 11px 25px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: var(--blue);
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.15s ease,
+        transform 0.1s ease,
+        box-shadow 0.15s ease;
+}
+
+#submit-btn:hover {
+    background: var(--blue-hover);
+
+    box-shadow:
+        0 5px 15px rgba(37, 99, 235, 0.25);
+}
+
+#submit-btn:active {
+    transform: translateY(1px);
+}
+
+
+/* ========================================
+   RESULT
+======================================== */
+
+#result {
+    width: fit-content;
+
+    min-width: 120px;
+
+    margin: 22px auto 0;
+
+    padding: 9px 18px;
+
+    border-radius: 7px;
+
+    background: var(--green-bg);
+
+    color: var(--green);
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    text-align: center;
+}
+
+
+/* ========================================
+   NEXT BUTTON
+======================================== */
+
+#next-btn {
+    display: block;
+
+    width: fit-content;
+
+    min-width: 150px;
+
+    margin: 14px auto 0;
+
+    padding: 11px 25px;
+
+    border: 1px solid var(--border-light);
+
+    border-radius: 7px;
+
+    background: #1e293b;
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.15s ease,
+        border-color 0.15s ease;
+}
+
+#next-btn:hover {
+    background: #334155;
+
+    border-color: #475569;
+}
+
+
+/* ========================================
+   HIDDEN
+======================================== */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* ========================================
+   TABLET
+   701px — 900px
+======================================== */
+
+@media (max-width: 900px) {
+
+    main {
+        max-width: 900px;
+
+        margin: 30px auto;
+
+        padding: 0 16px;
+    }
+
+    .question-box {
+        padding: 25px 24px 28px;
+    }
+
+    .matching-area {
+        gap: 18px;
+    }
+
+    .match-item {
+        font-size: 13px;
+    }
+}
+
+
+/* ========================================
+   MOBILE
+   700px AND BELOW
+======================================== */
+
+@media (max-width: 700px) {
+
+    body {
+        min-width: 0;
+
+        overflow-x: hidden;
+    }
+
+
+    /* ---------- HEADER ---------- */
+
+    header {
+        padding: 18px 14px 20px;
+    }
+
+    header h1 {
+        font-size: 23px;
+
+        letter-spacing: 1px;
+    }
+
+    header p {
+        margin-top: 4px;
+
+        font-size: 12px;
+    }
+
+
+    /* ---------- MAIN ---------- */
+
+    main {
+        width: 100%;
+
+        margin: 14px auto;
+
+        padding: 0 10px;
+    }
+
+
+    /* ---------- CARD ---------- */
+
+    .question-box {
+        width: 100%;
+
+        padding: 17px 12px 20px;
+
+        border-radius: 10px;
+    }
+
+
+    /* ---------- HEADER ---------- */
+
+    .question-header {
+        padding-bottom: 12px;
+
+        font-size: 11px;
+
+        gap: 8px;
+    }
+
+
+    /* ---------- TITLE ---------- */
+
+    h2 {
+        margin: 18px 0 21px;
+
+        font-size: 19px;
+    }
+
+
+    /* ====================================
+       STACK COLUMNS
+    ==================================== */
+
+    .matching-area {
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 17px;
+
+        width: 100%;
+    }
+
+
+    /* ====================================
+       COLUMN HEADINGS
+    ==================================== */
+
+    h3 {
+        margin-bottom: 8px;
+
+        font-size: 12px;
+    }
+
+
+    /* ====================================
+       MATCH ITEM
+    ==================================== */
+
+    .match-item {
+        width: 100%;
+
+        min-height: 52px;
+
+        padding: 10px;
+
+        margin-bottom: 7px;
+
+        font-size: 13px;
+
+        line-height: 1.45;
+
+        border-radius: 7px;
+    }
+
+
+    /* ====================================
+       LETTER / NUMBER
+    ==================================== */
+
+    .match-item strong,
+    .number {
+        width: 23px;
+
+        min-width: 23px;
+
+        font-size: 13px;
+    }
+
+
+    /* ====================================
+       TEXT
+    ==================================== */
+
+    .term,
+    .match-item > span:not(.term):not(.number) {
+        line-height: 1.5;
+
+        white-space: normal;
+
+        overflow-wrap: anywhere;
+    }
+
+
+    /* ====================================
+       DROPDOWN
+    ==================================== */
+
+    .match-item select {
+        width: 36px;
+
+        min-width: 36px;
+
+        max-width: 36px;
+
+        height: 32px;
+
+        margin-left: 7px;
+
+        margin-top: 0;
+
+        border-radius: 6px;
+    }
+
+
+    .match-item select option {
+        background-color: #111827;
+
+        color: #f8fafc;
+
+        font-size: 12px;
+    }
+
+
+    /* ====================================
+       BUTTONS
+    ==================================== */
+
+    #submit-btn,
+    #next-btn {
+        width: 100%;
+
+        max-width: 280px;
+
+        min-width: 0;
+
+        margin-left: auto;
+
+        margin-right: auto;
+
+        padding: 12px 20px;
+
+        font-size: 14px;
+    }
+
+
+    #submit-btn {
+        margin-top: 20px;
+    }
+
+
+    /* ====================================
+       SCORE
+    ==================================== */
+
+    #result {
+        margin-top: 18px;
+
+        padding: 8px 15px;
+
+        font-size: 14px;
+    }
+
+
+    #next-btn {
+        margin-top: 11px;
+    }
+}
+
+
+/* ========================================
+   SMALL PHONES
+   480px AND BELOW
+======================================== */
+
+@media (max-width: 480px) {
+
+    header {
+        padding: 16px 12px 18px;
+    }
+
+    header h1 {
+        font-size: 21px;
+    }
+
+    header p {
+        font-size: 11px;
+    }
+
+
+    main {
+        margin: 10px auto;
+
+        padding: 0 7px;
+    }
+
+
+    .question-box {
+        padding: 15px 9px 18px;
+
+        border-radius: 9px;
+    }
+
+
+    .question-header {
+        font-size: 10.5px;
+    }
+
+
+    h2 {
+        margin: 17px 0 19px;
+
+        font-size: 18px;
+    }
+
+
+    .matching-area {
+        gap: 15px;
+    }
+
+
+    h3 {
+        font-size: 11px;
+
+        margin-bottom: 7px;
+    }
+
+
+    .match-item {
+        min-height: 50px;
+
+        padding: 9px;
+
+        margin-bottom: 6px;
+
+        font-size: 12.5px;
+    }
+
+
+    .match-item strong,
+    .number {
+        width: 21px;
+
+        min-width: 21px;
+
+        font-size: 12px;
+    }
+
+
+    .match-item select {
+        width: 34px;
+
+        min-width: 34px;
+
+        max-width: 34px;
+
+        height: 30px;
+
+        margin-left: 6px;
+    }
+
+
+    #submit-btn,
+    #next-btn {
+        max-width: 100%;
+
+        padding: 11px 18px;
+
+        font-size: 13px;
+    }
+}
+
+
+/* ========================================
+   VERY SMALL PHONES
+   360px AND BELOW
+======================================== */
+
+@media (max-width: 360px) {
+
+    header {
+        padding: 14px 10px 16px;
+    }
+
+
+    header h1 {
+        font-size: 19px;
+
+        letter-spacing: 0.7px;
+    }
+
+
+    header p {
+        font-size: 10px;
+    }
+
+
+    main {
+        margin: 8px auto;
+
+        padding: 0 5px;
+    }
+
+
+    .question-box {
+        padding: 13px 7px 16px;
+    }
+
+
+    .question-header {
+        font-size: 10px;
+    }
+
+
+    h2 {
+        font-size: 17px;
+
+        margin: 15px 0 17px;
+    }
+
+
+    .match-item {
+        padding: 8px;
+
+        font-size: 12px;
+    }
+
+
+    .match-item strong,
+    .number {
+        width: 20px;
+
+        min-width: 20px;
+    }
+
+
+    .match-item select {
+        width: 32px;
+
+        min-width: 32px;
+
+        max-width: 32px;
+
+        height: 29px;
+
+        margin-left: 5px;
+    }
+
+
+    #submit-btn,
+    #next-btn {
+        font-size: 12.5px;
+
+        padding: 10px 15px;
+    }
+}
